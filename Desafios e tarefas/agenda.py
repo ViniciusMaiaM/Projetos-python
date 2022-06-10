@@ -5,12 +5,13 @@ while escolha != '0':
     print('=========================')
     print('==== Programa Agenda ====')
     print('=========================')
-    print('  1 - Cadastrar contato  ')
-    print('  2 - Pesquisar contato  ')
-    print('  3 - Atualizar contato  ')
-    print('  4 - Apagar contato     ')
-    print('  5 - Listar todos       ')
-    print('  0 - Sair               ')
+    print('= 1 - Cadastrar contato =')
+    print('= 2 - Pesquisar contato =')
+    print('= 3 - Atualizar contato =')
+    print('= 4 - Apagar contato    =')
+    print('= 5 - Listar todos      =')
+    print('= 0 - Sair              =')
+    print('=========================')
     escolha = input('Escolha sua opção: ')
 
     if escolha == '1':
@@ -29,26 +30,78 @@ while escolha != '0':
 
     elif escolha == '2':
         print()
-        print('Módulo de pesquisa\n')
+        print('Módulo de pesquisa: \n')
         nome_bus = input('Insira o nome que você quer procurar: ')
+        achou = False
         for pessoa in agenda:
             if nome_bus.upper() in pessoa[0].upper():
+                achou = True
                 print()
                 print('Nome:\t', pessoa[0])
                 print('Número:\t', pessoa[1])
                 print('Email:\t', pessoa[2])
                 print()
         print()
+        if not achou:
+            print('Nome não encontrado')
+        print()
 
     elif escolha == '3':
         print()
-        print('Módulo de exclusão')
+        print('Módulo de Atualização:\n')
         nome_bus = input('Nome a procurar: ')
         achou = False
         for pessoa in agenda:
             if nome_bus.upper() in pessoa[0].upper():
                 achou = True
                 print()
+                print('Contato atual:\n')
+                print('Nome:\t', pessoa[0])
+                print('Número:\t', pessoa[1])
+                print('Email:\t', pessoa[2])
+                print('\nAgora você aplicará as mudanças no contato \n')
+                nome = input('Insira a mudança no nome: ')
+                pessoa[0] = nome
+                agenda.append(pessoa[0])
+                nume = input('Insira a mudança no número: ')
+                pessoa[1] = nume
+                agenda.append(pessoa[1])
+                email = input('Insira a mudança no email: ')
+                pessoa[2] = email
+                agenda.append(pessoa[2])
+                print('\nAs mudanças foram aplicadas: ')
+                print('Nome:\t', pessoa[0])
+                print('Número:\t', pessoa[1])
+                print('Email:\t', pessoa[2])
+                print()
+        if not achou:
+            print('Nome não encontrado')
+        print()
+
+    elif escolha == '4':
+        print()
+        print('Módulo de Exclusão:\n')
+        nome_bus = input('Nome a procurar: ')
+        achou = False
+        for pessoa in agenda:
+            if nome_bus.upper() in pessoa[0].upper():
+                achou = True
+                print()
+                print('Contato atual:\n')
+                print('Nome:\t', pessoa[0])
+                print('Número:\t', pessoa[1])
+                print('Email:\t', pessoa[2])
+                mud = input('Muda')
+                nome = input('Insira a mudança no nome: ')
+                pessoa[0] = nome
+                agenda.append(pessoa[0])
+                nume = input('Insira a mudança no número: ')
+                pessoa[1] = nume
+                agenda.append(pessoa[1])
+                email = input('Insira a mudança no email: ')
+                pessoa[2] = email
+                agenda.append(pessoa[2])
+                print('\nAs mudanças foram aplicadas: ')
                 print('Nome:\t', pessoa[0])
                 print('Número:\t', pessoa[1])
                 print('Email:\t', pessoa[2])
