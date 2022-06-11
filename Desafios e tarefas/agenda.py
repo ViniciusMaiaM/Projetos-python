@@ -1,3 +1,6 @@
+from os import remove
+
+
 agenda = []
 escolha = ""
 
@@ -35,13 +38,13 @@ while escolha != '0':
         achou = False
         for pessoa in agenda:
             # se o nome está nesta lista
-            if nome_bus.upper() in pessoa[0].upper():
-                achou = True
+            if nome_bus.upper() in pessoa[0].upper() and not achou:
                 print()
                 print('Nome:\t', pessoa[0])
                 print('Número:\t', pessoa[1])
                 print('Email:\t', pessoa[2])
                 print()
+                achou = True
         print()
         if not achou:
             print('Nome não encontrado')
@@ -54,8 +57,7 @@ while escolha != '0':
         achou = False
         for pessoa in agenda:
             # Mesma estrutura do módulo de busca
-            if nome_bus.upper() in pessoa[0].upper():
-                achou = True
+            if nome_bus.upper() in pessoa[0].upper() and not achou:
                 print()
                 print('Contato atual:\n')
                 print('Nome:\t', pessoa[0])
@@ -78,6 +80,7 @@ while escolha != '0':
                 print('Número:\t', pessoa[1])
                 print('Email:\t', pessoa[2])
                 print()
+                achou = True
 
         if not achou:
             print('Nome não encontrado')
@@ -88,20 +91,18 @@ while escolha != '0':
         print('Módulo de Exclusão:\n')
         nome_bus = input('Nome a procurar: ')
         achou = False
-        for pessoa in agenda:
-            if nome_bus.upper() in pessoa[0].upper():
-                achou = True
+        for excl in agenda:
+            if nome_bus.upper() in excl[0].upper() and not achou:
                 print()
-                print('Contato atual:\n')
-                print('Nome:\t', pessoa[0])
-                print('Número:\t', pessoa[1])
-                print('Email:\t', pessoa[2])
+                print('Contato para a exclusão:\n')
+                print('Nome:\t', excl[0])
+                print('Número:\t', excl[1])
+                print('Email:\t', excl[2])
+                achou = True
                 ex = input('Quer excluir este contato(S/N)?')
                 if ex.upper() == "S":
-                    for pessoa in agenda:  # ainda tenho que buscar uma solução melhor
-                        pessoa[0] = []
-                        pessoa[1] = []
-                        pessoa[2] = []
+                    for excl in agenda:  # ainda tenho que buscar uma solução melhor
+                        del agenda[0]
 
         if not achou:
             print('Nome não encontrado')
