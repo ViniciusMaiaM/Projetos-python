@@ -63,17 +63,16 @@ while escolha != '0':
                 print('Nome:\t', pessoa[0])
                 print('Número:\t', pessoa[1])
                 print('Email:\t', pessoa[2])
-                print('\nAgora você aplicará as mudanças no contato \n')
+                agenda.remove(pessoa)
 
+                print('\nAgora você aplicará as mudanças no contato \n')
                 nome = input('Insira a mudança no nome: ')
-                pessoa[0] = nome
-                agenda.append(pessoa[0])
+                contato.append(nome)
                 nume = input('Insira a mudança no número: ')
-                pessoa[1] = nume
-                agenda.append(pessoa[1])
+                contato.append(nume)
                 email = input('Insira a mudança no email: ')
-                pessoa[2] = email
-                agenda.append(pessoa[2])
+                contato.append(email)
+                agenda.append(contato)
 
                 print('\nAs mudanças foram aplicadas: ')
                 print('Nome:\t', pessoa[0])
@@ -110,7 +109,7 @@ while escolha != '0':
 
     elif escolha == '5':
         print()
-        print('Módulo de listagem\n')
+        print('Módulo de listagem:\n')
         for i in agenda:
             print('Nome:\t', i[0])
             print('Número:\t', i[1])
@@ -120,5 +119,7 @@ while escolha != '0':
 
     elif escolha == '0':
         print()
-        print('Módulo de encerramento\n')
-        print()
+        print('Módulo de encerramento!\n')
+    else:
+        print('Módulo invalido!')
+print('Até a proxima!')
