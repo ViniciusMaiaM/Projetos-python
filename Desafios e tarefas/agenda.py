@@ -63,7 +63,8 @@ while escolha != '0':
                 print('Nome:\t', pessoa[0])
                 print('Número:\t', pessoa[1])
                 print('Email:\t', pessoa[2])
-                agenda.remove(pessoa)
+                for pessoa in agenda:  # ainda tenho que buscar uma solução melhor
+                    del agenda[0]
 
                 print('\nAgora você aplicará as mudanças no contato \n')
                 nome = input('Insira a mudança no nome: ')
@@ -75,9 +76,9 @@ while escolha != '0':
                 agenda.append(contato)
 
                 print('\nAs mudanças foram aplicadas: ')
-                print('Nome:\t', pessoa[0])
-                print('Número:\t', pessoa[1])
-                print('Email:\t', pessoa[2])
+                print('Nome:\t', nome)
+                print('Número:\t', nume)
+                print('Email:\t', email)
                 print()
                 achou = True
 
