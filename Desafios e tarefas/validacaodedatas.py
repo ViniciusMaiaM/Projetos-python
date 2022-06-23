@@ -2,7 +2,8 @@ print('Informe a data')
 dia = int(input('Dia: '))
 mes = int(input('Mês: '))
 ano = int(input('Ano: '))
-
+mes31 = [1, 3, 5, 7, 8, 10, 12]
+mes30 = [3, 6, 9, 11]
 if ano == 0:
     print('Ano não valido')
 
@@ -18,7 +19,7 @@ elif ((ano % 4) == 0) and ((ano % 100) != 0) or ((ano % 400) == 0):
         print('A data é %d/%d/%d' % (dia, mes, ano))
         exit()
 
-if mes == 1 and dia > 31 or mes == 3 and dia > 31 or mes == 5 and dia > 31 or mes == 7 and dia > 31 or mes == 8 and dia > 31 or mes == 10 and dia > 31 or mes == 12 and dia > 31:
+if mes in mes31 and dia > 31:
     if mes == 1:
         print('Dia Invalido para Janeiro')
     elif mes == 3:
@@ -34,7 +35,7 @@ if mes == 1 and dia > 31 or mes == 3 and dia > 31 or mes == 5 and dia > 31 or me
     elif mes == 12:
         print('Dia Invalido para Dezembro')
 
-elif mes == 3 and dia > 30 or mes == 6 and dia > 30 or mes == 9 and dia > 30 or mes == 11 and dia > 30:
+elif mes in mes31 and dia > 30:
     if mes == 3:
         print('Dia Invalido para Março')
     if mes == 6:
