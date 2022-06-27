@@ -2,10 +2,11 @@ from cProfile import label
 import matplotlib.pyplot  # importar biblioteca do grafico
 import random
 temp = []
+bo = 30
 print('Essas foram as temperaturas geradas:')
-print('====================================')
+print('='*bo)
 print('Madrugada')
-print('====================================')
+print('='*bo)
 for a in range(1):  # Horários da madrugada
     h0 = random.uniform(22, 21)
     temp.append(h0)
@@ -83,35 +84,35 @@ for q in range(1):
     temp.append(h16)
     print('%.2f' % h16)
 for r in range(1):
-    h17 = random.uniform(27, 26)
+    h17 = random.uniform(37, 36)
     temp.append(h17)
     print('%.2f' % h17)
 
 print('====================================')
 print('Noite')
-print('====================================')
+print('=' * 30)
 for s in range(1):  # Horarios da noite
-    h18 = random.uniform(26, 26)
+    h18 = random.uniform(35, 34)
     temp.append(h18)
     print('%.2f' % h18)
 for t in range(1):
-    h19 = random.uniform(26, 25)
+    h19 = random.uniform(33, 32)
     temp.append(h19)
     print('%.2f' % h19)
 for u in range(1):
-    h20 = random.uniform(25, 24)
+    h20 = random.uniform(31, 30)
     temp.append(h20)
     print('%.2f' % h20)
 for v in range(1):
-    h21 = random.uniform(24, 23)
+    h21 = random.uniform(29, 28)
     temp.append(h21)
     print('%.2f' % h21)
 for w in range(1):
-    h22 = random.uniform(23, 22)
+    h22 = random.uniform(27, 26)
     temp.append(h22)
     print('%.2f' % h22)
 for x in range(1):
-    h23 = random.uniform(22, 22)
+    h23 = random.uniform(25, 25)
     temp.append(h23)
     print('%.2f' % h23)
 
