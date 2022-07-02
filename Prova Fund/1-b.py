@@ -4,7 +4,6 @@
 
 
 print ('Soluções da questão 1')
-print ('')
 print ('Letra B:')
 
 an = 3
