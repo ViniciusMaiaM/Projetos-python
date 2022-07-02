@@ -3,8 +3,7 @@
 # A = 2(n-1) + 3 + A(n-1)
 
 print('Soluções da questão 1')
-print('')
-print('a: ')
+print('Letra A:')
 
 an = 1
 
