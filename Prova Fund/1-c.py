@@ -3,7 +3,6 @@
 # An = 5 + 2A(n-1)
 
 print('Soluções da questão 1')
-print('')
 print('Letra C:')
 
 an = 1
