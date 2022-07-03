@@ -1,3 +1,5 @@
+import os
+os.system('cls')
 # A(n+1) - An = 2n + 3 | n >= 0 e A0 = 1
 # A(n+1) = 2n + 3 + An
 # A = 2(n-1) + 3 + A(n-1)
