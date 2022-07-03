@@ -21,6 +21,4 @@ def funcc(n):
         return 1
     else:
         return 5 + 2*funcc(n-1)
-
-
 print('Por função: ', funcc(v))
