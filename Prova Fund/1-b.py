@@ -1,3 +1,5 @@
+import os
+os.system('cls')
 # An+1 - An = 3n² - n | n >= 0 e A0 = 3
 # An+1 = 3n² - n + An
 # A = 3((n-1)²) - n-1 + A (n-1)
