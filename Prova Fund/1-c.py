@@ -1,3 +1,5 @@
+import os
+os.system('cls')
 # An+1 - 2An = 5 | n>=0 e A0 = 1
 # An+1 = 5 + 2An
 # An = 5 + 2A(n-1)
