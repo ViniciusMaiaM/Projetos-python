@@ -22,13 +22,13 @@ print (md)
 contma = 0
 contme = len(temps)
 
-for temperatura in temps: 
-  if temperatura > md:
-    print ('A temperatura %.2f foi maior do que a média no horário %f' %(temperatura, hr))
+for i in range (7): 
+  if temps[i] > md:
+    print ('A temperatura',temps[i],'foi maior do que a média no horário', hr[i] )
     contma += 1
   else:
-    print ('A temperatura %.2f foi menor do que a média no horário %f' %(temperatura,temperatura+1))
+    print ('A temperatura',temps[i], 'foi menor do que a média no horário', hr[i] )
     contme -= 1
 
-print ('A temperatura foi maior do que média %d' %(contma))
-print ('A temperatura foi menor do que média %d' %(contme))
+print ('A temperatura foi maior do que média %d vezes' %(contma))
+print ('A temperatura foi menor do que média %d vezes' %(contme))
