@@ -1,13 +1,13 @@
 from random import randint
-qjog = input('Quer jogar (S/N)? ')
-while qjog.upper() == 'S':
+jogad = input('Quer jogar (S/N)? ')
+while jogad.upper() == 'S':
     velha = [
         ['_', '_', '_'],
         ['_', '_', '_'],
         ['_', '_', '_']
     ]
 
-    print("Tabuleiro")
+    print("|Tabuleiro|")
 
     for i in range(3):
         for j in range(3):
@@ -20,21 +20,21 @@ while qjog.upper() == 'S':
     pcganha = False
     deuvelha = False
 
-    while joga <= 9 and not (ganhou):
+    while joga <= 9 and not (ganhou): #enquanto as jogadas forem menores ou iguais a nove o jogo continuara rodando
 
         invalidax = False
 
-        while not(invalidax):
+        while not(invalidax):  #estrutura para rodar a vez do jogador
 
             print("Vez do Jogador X")
             i = int(input("Informe a linha: "))
             j = int(input("Informe a coluna: "))
 
-            if i > 3 or j > 3:
+            if i > 3 or j > 3: #se tiver jogado fora dos limites do tabuleiro
 
                 print("jogada invalida, jogue novamente!")
 
-            else:
+            else: #verificação para ver se a casa já não está ocupada
 
                 qc = velha[i-1][j-1]
 
@@ -42,7 +42,7 @@ while qjog.upper() == 'S':
 
                     print("jogada invalida, jogue novamente!")
 
-                else:
+                else: #print do tabuleiro com a marcação
 
                     velha[i-1][j-1] = 'X'
 
@@ -60,7 +60,7 @@ while qjog.upper() == 'S':
             deuvelha = True
             invalidao = True
 
-        while not(invalidao):
+        while not(invalidao): #estrutura para rodar a vez do pc
 
             print("Vez do Jogador 0")
             i = randint(1, 3)
@@ -78,7 +78,7 @@ while qjog.upper() == 'S':
                     print()
                 joga += 1
                 invalidao = True
-
+        #condições de vitória
         if (velha[0][0] == velha[0][1]) and (velha[0][1] == velha[0][2]) and (velha[0][2] == 'X'):
             ganhou = True
             jogganha = True
@@ -130,12 +130,12 @@ while qjog.upper() == 'S':
             pcganha = True
 
     if jogganha == True:
-        print("Jogador Venceu")
+        print("Jogador Venceu!")
 
     elif pcganha == True:
-        print("Computador Venceu")
+        print("Computador Venceu!")
 
     elif deuvelha == True:
-        print('Deu velha Porra!')
+        print('Deu velha!')
 
-    qjog = input('Quer jogar novamente (S/N)? ')
+    jogad = input('Quer jogar novamente (S/N)? ')
