@@ -22,6 +22,7 @@ while escolha != '0':
         print('Módulo de cadastro:\n')
 
         contato = []
+        contato.clear()
         nome = input('Insira o nome: ')
         contato.append(nome)
         nume = input('Insira o contato: ')
@@ -29,8 +30,7 @@ while escolha != '0':
         email = input('Insira o email: ')
         contato.append(email)
         agenda.append(contato)  # Passando pra lista
-        print()
-
+        
     elif escolha == '2':  # Função de pesquisa
         print()
         print('Módulo de pesquisa: \n')
@@ -57,31 +57,25 @@ while escolha != '0':
         achou = False
         for pessoa in agenda:
             # Mesma estrutura do módulo de busca
-            if nome_bus.upper() in pessoa[0].upper() and not achou:
+            if nome_bus in pessoa and not achou:
+                print(pessoa)
                 print()
                 print('Contato atual:\n')
                 print('Nome:\t', pessoa[0])
                 print('Número:\t', pessoa[1])
                 print('Email:\t', pessoa[2])
-                for pessoa in agenda:  # ainda tenho que buscar uma solução melhor
-                    del agenda[0]
+                agenda.remove(pessoa)
+                print(agenda)
 
                 print('\nAgora você aplicará as mudanças no contato \n')
-                nome = input('Insira a mudança no nome: ')
+                nome2 = input('Insira a mudança no nome: ')
                 contato.append(nome)
                 nume = input('Insira a mudança no número: ')
                 contato.append(nume)
                 email = input('Insira a mudança no email: ')
                 contato.append(email)
                 agenda.append(contato)
-
-                print('\nAs mudanças foram aplicadas: ')
-                print('Nome:\t', nome)
-                print('Número:\t', nume)
-                print('Email:\t', email)
-                print()
                 achou = True
-
         if not achou:
             print('Nome não encontrado')
         print()
@@ -91,31 +85,29 @@ while escolha != '0':
         print('Módulo de Exclusão:\n')
         nome_bus = input('Nome a procurar: ')
         achou = False
-        for excl in agenda:
-            if nome_bus.upper() in excl[0].upper() and not achou:
-                print()
-                print('Contato para a exclusão:\n')
-                print('Nome:\t', excl[0])
-                print('Número:\t', excl[1])
-                print('Email:\t', excl[2])
-                achou = True
+        for pessoa in agenda:
+            if nome_bus in pessoa and not achou:
                 ex = input('Quer excluir este contato(S/N)?')
+                f = agenda.index(pessoa)
                 if ex.upper() == "S":
-                    for excl in agenda:  # ainda tenho que buscar uma solução melhor
-                        del agenda[0]
+                    agenda.remove(pessoa)
+                achou = True
 
-        if not achou:
-            print('Nome não encontrado')
+            else:
+                print('Nome não encontrado')
         print()
 
     elif escolha == '5':
         print()
         print('Módulo de listagem:\n')
+        cont = 1
         for i in agenda:
+            print('Contato %d:' % (cont))
             print('Nome:\t', i[0])
             print('Número:\t', i[1])
             print('Email:\t', i[2])
             print()
+            cont += 1
         print()
 
     elif escolha == '0':
